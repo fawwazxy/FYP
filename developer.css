@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://i.imgur.com/NpHVnvk.jpeg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.org-chart {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    position: relative; /* Make org-chart relative for absolute positioning */
+}
+
+.member {
+    text-align: center;
+    margin: 20px;
+    position: relative;
+}
+
+.member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #007bff;
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.member .details {
+    margin-top: 10px;
+}
+
+.member h2 {
+    margin-top: 10px;
+    color: #007bff;
+}
+
+.member p {
+    margin-top: 5px;
+    color: #555;
+}
+
+.vertical-line {
+    position: absolute;
+    width: 2px;
+    height: calc(100% - 150px); /* Adjust according to image height */
+    background-color: #007bff;
+    top: 150px; /* Align at the bottom of the image */
+    left: calc(50% - 1px); /* Center horizontally */
+    z-index: -1; /* Ensure it's behind member */
+}
+
+.connector {
+    position: absolute;
+    height: 50px; /* Adjust connector height */
+    width: 2px;
+    background-color: #007bff;
+    top: calc(50% - 25px); /* Center vertically */
+    left: calc(50% - 1px); /* Center horizontally */
+    z-index: -1; /* Ensure connector is behind members */
+}
+
+.member:first-child .connector,
+.member:first-child .vertical-line {
+    display: none; /* Hide connector and line for the top-most member */
+}
+
+.member:hover img {
+    transform: scale(1.1); /* Scale up image on hover for a zoom effect */
+}

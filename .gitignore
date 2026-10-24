@@ -1,0 +1,9 @@
+.env
+.idea/
+.vscode/
+node_modules/
+*.rar
+*.zip
+error_log
+Thumbs.db
+desktop.ini
